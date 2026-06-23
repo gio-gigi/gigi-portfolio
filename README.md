@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio de Giovanna
 
-## Getting Started
+Portafolio profesional construido con Next.js (App Router), React y TypeScript.
+El objetivo del proyecto es presentar experiencia, stack tecnico, proyectos y medios de contacto en una interfaz moderna, responsiva y bilingue (es/en).
 
-First, run the development server:
+## Demo local
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Una vez levantado el proyecto, abre:
+
+- http://localhost:3000
+
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript 5
+- CSS (estilos globales y por componentes)
+- Framer Motion (animaciones)
+- Lucide React (iconos)
+
+## Arquitectura
+
+El proyecto sigue una estructura por dominios (features) y componentes compartidos:
+
+```text
+gigi-portfolio/
+|-- public/
+|   `-- images/
+`-- src/
+	|-- app/                    # Entrypoint de App Router (layout + home)
+	|-- components/
+	|   |-- layout/             # NavBar, Footer
+	|   |-- providers/          # Providers globales (ej. i18n)
+	|   |-- shared/             # Componentes reutilizables entre features
+	|   `-- ui/                 # Piezas UI base (badges, stickers, etc.)
+	|-- features/
+	|   |-- home/               # Hero, about, skills
+	|   |-- experience/         # Experiencia laboral y cursos
+	|   |-- projects/           # Proyectos destacados
+	|   `-- contact/            # Seccion de contacto
+	|-- lib/
+	|   |-- constants.ts        # Constantes de aplicacion
+	|   |-- utils.ts            # Utilidades compartidas
+	|   `-- i18n/               # Traducciones y tipos de locale
+	|-- styles/                 # Estilos globales extra
+	`-- types/                  # Tipos globales
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Flujo de la pagina principal
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+La home se compone en este orden:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Hero
+2. About
+3. Skills
+4. Experience
+5. Projects
+6. Contact
 
-## Learn More
+## Requisitos
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 20+
+- pnpm (recomendado)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tambien funciona con npm, yarn o bun.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Como levantar el proyecto
 
-## Deploy on Vercel
+1. Clona el repositorio.
+2. Instala dependencias.
+3. Inicia el servidor de desarrollo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Con pnpm:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm install
+pnpm dev
+```
+
+Con npm:
+
+```bash
+npm install
+npm run dev
+```
+
+## Scripts disponibles
+
+- `pnpm dev`: inicia desarrollo con Webpack.
+- `pnpm dev:turbo`: inicia desarrollo con Turbopack.
+- `pnpm build`: genera build de produccion.
+- `pnpm start`: levanta la build en modo produccion.
+- `pnpm lint`: ejecuta ESLint.
+- `pnpm lint:fix`: corrige problemas de lint automaticamente.
+- `pnpm format`: formatea con Prettier.
+- `pnpm format:check`: valida formato sin modificar archivos.
+
+## Internacionalizacion
+
+El proyecto soporta dos idiomas:
+
+- `es` (Espanol)
+- `en` (English)
+
+Las traducciones viven en `src/lib/i18n/translations.ts`.
+
+## Despliegue
+
+Recomendado: Vercel.
+
+Pasos basicos:
+
+1. Conecta este repositorio en Vercel.
+2. Ejecuta build con `pnpm build`.
+3. Publica.
+
+Tambien puedes desplegar en cualquier plataforma compatible con Next.js.
+
+## Autor
+
+Giovanna - Software Engineer

@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Star, Mail, Sparkles } from "lucide-react";
+import { Mail, Download } from "lucide-react";
 import { Sticker } from "@/components/ui";
 import { useI18n } from "@/components/providers";
 
@@ -34,7 +34,10 @@ function AnimatedText({ text, startDelay = 0, className, style }: AnimatedTextPr
 }
 
 export function HeroSection() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const cvEsUrl = process.env.NEXT_PUBLIC_CV_ES_URL;
+  const cvEnUrl = process.env.NEXT_PUBLIC_CV_EN_URL;
+  const cvHref = locale === "en" ? cvEnUrl : cvEsUrl;
 
   return (
     <section id="top" className="mx-auto max-w-6xl px-6 pb-16 pt-8">
@@ -76,12 +79,14 @@ export function HeroSection() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Sticker variant="pink" href="/#projects">
-              <Star className="h-4 w-4" /> {t.hero.ctaProjects}
-            </Sticker>
             <Sticker variant="brown" href="/#contact">
               <Mail className="h-4 w-4" /> {t.hero.ctaContact}
             </Sticker>
+            {cvHref ? (
+              <Sticker variant="cream" href={cvHref} target="_blank" rel="noopener noreferrer">
+                <Download className="h-4 w-4" /> {t.hero.ctaResume}
+              </Sticker>
+            ) : null}
           </div>
         </div>
 

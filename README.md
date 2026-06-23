@@ -118,4 +118,4 @@ Tambien puedes desplegar en cualquier plataforma compatible con Next.js.
 
 ## Autor
 
-Giovanna - Software Engineer
+Giovanna Chávez - Software Engineer

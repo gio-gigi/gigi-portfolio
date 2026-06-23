@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import { type Locale, translations } from "@/lib/i18n/translations";
 
 type I18nContextValue = {
@@ -13,22 +20,20 @@ const I18N_STORAGE_KEY = "portfolio-locale";
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
-const getInitialLocale = (): Locale => {
-  if (typeof window === "undefined") return "es";
-
-  const saved = window.localStorage.getItem(I18N_STORAGE_KEY);
-  return saved === "en" || saved === "es" ? saved : "es";
-};
-
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
+  const [locale, setLocaleState] = useState<Locale>("es");
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem(I18N_STORAGE_KEY);
+    if (saved === "en" || saved === "es") {
+      setLocaleState(saved);
+    }
+  }, []);
 
   const value = useMemo<I18nContextValue>(() => {
     const setLocale = (nextLocale: Locale) => {
       setLocaleState(nextLocale);
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(I18N_STORAGE_KEY, nextLocale);
-      }
+      window.localStorage.setItem(I18N_STORAGE_KEY, nextLocale);
     };
 
     return {

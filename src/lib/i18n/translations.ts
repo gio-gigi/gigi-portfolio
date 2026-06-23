@@ -20,6 +20,7 @@ type TranslationDictionary = {
     description: string;
     ctaProjects: string;
     ctaContact: string;
+    ctaResume: string;
     badge: string;
     imageAlt: string;
   };
@@ -87,6 +88,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
         "Construyo cosas dulces y funcionales para la web, desde la UI hasta la base de datos. Me encanta el detalle y los proyectos con personalidad.",
       ctaProjects: "Ver proyectos",
       ctaContact: "Hablemos",
+      ctaResume: "Descargar CV",
       badge: "dev life",
       imageAlt: "Foto de Giovanna",
     },
@@ -172,6 +174,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
         "I build sweet and functional things for the web, from UI to the database. I love detail and projects with personality.",
       ctaProjects: "See projects",
       ctaContact: "Let us talk",
+      ctaResume: "Download Resume",
       badge: "dev life",
       imageAlt: "Giovanna photo",
     },

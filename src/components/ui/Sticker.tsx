@@ -13,6 +13,8 @@ interface StickerProps {
   children: ReactNode;
   asChild?: boolean;
   href?: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  rel?: string;
 }
 
 interface Ripple {
@@ -34,6 +36,8 @@ export function Sticker({
   style,
   children,
   href,
+  target,
+  rel,
 }: StickerProps) {
   const [ripples, setRipples] = useState<Ripple[]>([]);
 
@@ -73,7 +77,14 @@ export function Sticker({
 
   if (href) {
     return (
-      <a href={href} className={classes} style={style} onMouseDown={createRipple}>
+      <a
+        href={href}
+        className={classes}
+        style={style}
+        onMouseDown={createRipple}
+        target={target}
+        rel={rel}
+      >
         {rippleNodes}
         {children}
       </a>

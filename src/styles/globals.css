@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Caveat:wght@400;600;700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-strawberry: var(--strawberry);
+  --color-strawberry-soft: var(--strawberry-soft);
+  --color-chocolate: var(--chocolate);
+  --color-chocolate-deep: var(--chocolate-deep);
+  --color-vanilla: var(--vanilla);
+  --color-vanilla-soft: var(--vanilla-soft);
+  --color-ink: var(--ink);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  --shadow-sticker: 2px 3px 0 0 var(--ink);
+  --shadow-sticker-lg: 4px 5px 0 0 var(--ink);
+  --shadow-soft: 0 8px 24px -8px color-mix(in oklab, var(--ink) 25%, transparent);
+}
+
+:root {
+  --radius: 1rem;
+
+  --strawberry: oklch(0.85 0.09 8);
+  --strawberry-soft: oklch(0.92 0.05 8);
+  --chocolate: oklch(0.62 0.08 50);
+  --chocolate-deep: oklch(0.32 0.06 50);
+  --vanilla: oklch(0.93 0.09 95);
+  --vanilla-soft: oklch(0.97 0.05 95);
+  --cream: oklch(0.97 0.02 85);
+  --ink: oklch(0.28 0.05 50);
+
+  --background: var(--cream);
+  --foreground: var(--chocolate-deep);
+
+  --card: oklch(1 0.01 85);
+  --card-foreground: var(--chocolate-deep);
+  --popover: var(--card);
+  --popover-foreground: var(--chocolate-deep);
+
+  --primary: var(--strawberry);
+  --primary-foreground: var(--chocolate-deep);
+  --secondary: var(--vanilla);
+  --secondary-foreground: var(--chocolate-deep);
+  --muted: var(--vanilla-soft);
+  --muted-foreground: oklch(0.45 0.05 50);
+  --accent: var(--chocolate);
+  --accent-foreground: var(--cream);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: var(--cream);
+
+  --border: oklch(0.85 0.04 60);
+  --input: oklch(0.9 0.03 60);
+  --ring: var(--strawberry);
+
+  /* Legacy aliases used by existing section classes */
+  --crema-2: color-mix(in oklab, var(--cream) 88%, white);
+  --cafe: color-mix(in oklab, var(--chocolate) 84%, var(--chocolate-deep));
+  --cafe-mid: color-mix(in oklab, var(--chocolate) 56%, var(--chocolate-deep));
+  --cafe-dark: var(--chocolate-deep);
+  --rosa-deep: color-mix(in oklab, var(--strawberry) 68%, var(--chocolate));
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(color-mix(in oklab, var(--chocolate) 12%, transparent) 1px, transparent 1px),
+      radial-gradient(color-mix(in oklab, var(--strawberry) 30%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px, 36px 36px;
+    background-position: 0 0, 14px 14px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility font-hand {
+  font-family: var(--font-hand);
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility sticker {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-sticker);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: transform 200ms ease;
+}
+
+@utility sticker-pink {
+  background: var(--strawberry);
+}
+
+@utility sticker-cream {
+  background: var(--vanilla);
+}
+
+@utility sticker-brown {
+  background: var(--chocolate);
+  color: var(--cream);
+}
+
+@utility paper {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sticker-lg);
+  position: relative;
+}
+
+@utility tape {
+  position: absolute;
+  background: color-mix(in oklab, var(--vanilla) 70%, transparent);
+  border: 1px dashed color-mix(in oklab, var(--ink) 30%, transparent);
+  width: 80px;
+  height: 22px;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  border-radius: 2px;
+}
+
+@layer utilities {
+  @keyframes sticker-ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  .bg-crema-2 {
+    background-color: var(--crema-2);
+  }
+
+  .text-cafe {
+    color: var(--cafe);
+  }
+
+  .text-cafe-mid {
+    color: var(--cafe-mid);
+  }
+
+  .text-cafe-dark {
+    color: var(--cafe-dark);
+  }
+
+  .text-rosa-deep {
+    color: var(--rosa-deep);
+  }
+
+  .timeline-line::before {
+    content: "";
+    position: absolute;
+    left: 0.5mm;
+    top: 20px;
+    bottom: 8px;
+    width: 3px;
+    background: repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--rosa-deep) 45%, transparent) 0px,
+      color-mix(in oklab, var(--rosa-deep) 45%, transparent) 10px,
+      transparent 10px,
+      transparent 16px
+    );
+    border-radius: 2px;
+  }
+
+  .timeline-fill-dashes {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0.55;
+  }
+
+  .timeline-fill-dashes-visible {
+    animation: timeline-dashes-fill 1.2s steps(14, end) forwards;
+  }
+
+  @keyframes timeline-dashes-fill {
+    from {
+      clip-path: inset(0 0 100% 0);
+      opacity: 0.55;
+    }
+
+    to {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+  }
+}

@@ -1,28 +1,34 @@
 import type { Metadata } from "next";
 
-import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
 import "@/styles/globals.css";
 import { Footer, Navbar } from "@/components/layout";
 import { I18nProvider } from "@/components/providers";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gig1s.pages.dev"),
+
   title: {
-    default: SITE_NAME,
+    default: "Giovanna Chávez | Software Engineer en Zacatecas",
     template: `%s · ${SITE_NAME}`,
   },
 
-  description: SITE_DESCRIPTION,
+  description:
+    "Giovanna Chávez, Software Engineer en Zacatecas. Desarrollo de software, páginas web y aplicaciones web y móviles.",
 
   keywords: [
+    "Giovanna Chávez",
+    "Software Engineer Zacatecas",
+    "desarrolladora de software Zacatecas",
+    "desarrollador web Zacatecas",
     "desarrollo de software Zacatecas",
     "desarrollo web Zacatecas",
     "páginas web Zacatecas",
-    "desarrollador web Zacatecas",
-    "desarrollador de software Zacatecas",
-    "software Zacatecas",
     "aplicaciones web Zacatecas",
-    "desarrollo de aplicaciones Zacatecas",
-    "Software Engineer Zacatecas",
+    "aplicaciones móviles Zacatecas",
+    "React Zacatecas",
+    "Next.js Zacatecas",
+    "React Native Zacatecas",
   ],
 
   authors: [
@@ -33,19 +39,22 @@ export const metadata: Metadata = {
 
   creator: "Giovanna Chávez",
 
-  metadataBase: new URL("https://gig1s.pages.dev"),
-
   alternates: {
     canonical: "/",
   },
 
   openGraph: {
-    title: "Giovanna Chávez | Desarrollo de Software en Zacatecas",
+    title: "Giovanna Chávez | Software Engineer en Zacatecas",
     description: "Desarrollo de software, páginas web y aplicaciones web y móviles en Zacatecas.",
     url: "https://gig1s.pages.dev",
     siteName: "Giovanna Chávez",
     locale: "es_MX",
     type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

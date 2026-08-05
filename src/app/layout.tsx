@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
   creator: "Giovanna Chávez",
 
-  metadataBase: new URL("https://gigi.pages.dev"),
+  metadataBase: new URL("https://gig1s.pages.dev"),
 
   alternates: {
     canonical: "/",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Giovanna Chávez | Desarrollo de Software en Zacatecas",
     description: "Desarrollo de software, páginas web y aplicaciones web y móviles en Zacatecas.",
-    url: "https://gigi.pages.dev",
+    url: "https://gig1s.pages.dev",
     siteName: "Giovanna Chávez",
     locale: "es_MX",
     type: "website",

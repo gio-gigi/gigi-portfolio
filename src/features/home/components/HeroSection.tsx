@@ -98,7 +98,7 @@ export function HeroSection() {
           >
             <div className="tape" />
             <Image
-              src="/images/gio-img.jpeg"
+              src="/images/gio-photo.jpeg"
               alt={t.hero.imageAlt}
               fill
               className="object-cover"

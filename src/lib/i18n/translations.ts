@@ -101,7 +101,7 @@ export const translations: Record<Locale, TranslationDictionary> = {
         "Frontend con React y Next",
         "Backend con Node y Python",
         "SQL y NoSQL",
-        "Ojo para diseno",
+        "Ojo para diseño",
       ],
     },
     skills: {
@@ -112,25 +112,25 @@ export const translations: Record<Locale, TranslationDictionary> = {
       eyebrow: "✿ trayectoria",
       title: "Experiencia laboral",
       jobs: [
-        {
-          date: "2023 - presente",
-          role: "Frontend Junior Developer",
-          company: "C-Tickets / Gatzi - Startup",
-          desc: "Desarrollo de interfaces en React y TypeScript para plataforma de venta de boletos. Refactoring de componentes, integracion de SDKs y colaboracion en arquitectura frontend.",
-        },
-        {
-          date: "Anterior",
-          role: "Desarrolladora Web",
-          company: "Tribunal de Justicia Administrativa de Zacatecas",
-          desc: "Desarrollo y mantenimiento de sistemas internos para la institucion.",
-        },
-        {
-          date: "Servicio social",
-          role: "Desarrolladora - Responsable unica",
-          company: "LAPSOL - UAZ",
-          desc: "A cargo del desarrollo de software de forma independiente durante el periodo de servicio social en el laboratorio de la universidad.",
-        },
-      ],
+    {
+      date: "Oct 2024 - Jul 2026",
+      role: "Frontend Developer",
+      company: "Gatzi - Startup",
+      desc: "Optimización de Core Web Vitals con SSR en Next.js y React Router v7. Estandarización del consumo de APIs con hooks personalizados en TanStack Query. Implementación de Atomic Design, pruebas unitarias con Vitest y colaboración en células ágiles con Git.",
+    },
+    {
+      date: "Mar 2025 - May 2025",
+      role: "Frontend Developer",
+      company: "Tribunal de Justicia Administrativa de Zacatecas",
+      desc: "Desarrollo de sistema de gestión de casos con dashboards interactivos en Django, Bootstrap y HTML5. Módulos de monitoreo de usuarios, administración de palabras clave y generación automatizada de reportes.",
+    },
+    {
+      date: "Ago 2024 - May 2025",
+      role: "Pasante de Desarrollo de Software",
+      company: "LAPSOL - UAZ",
+      desc: "Responsable único del desarrollo fullstack de una aplicación móvil multiplataforma con React Native y backend en NestJS + MySQL, desde el levantamiento de requerimientos hasta la coordinación de pruebas de software (QA) y la entrega final.",
+    },
+  ],
     },
     courses: {
       eyebrow: "cursos y certificaciones",
@@ -198,25 +198,25 @@ export const translations: Record<Locale, TranslationDictionary> = {
       eyebrow: "✿ journey",
       title: "Work experience",
       jobs: [
-        {
-          date: "2023 - present",
-          role: "Frontend Junior Developer",
-          company: "C-Tickets / Gatzi - Startup",
-          desc: "Built interfaces in React and TypeScript for a ticketing platform. Refactored components, integrated SDKs, and collaborated on frontend architecture.",
-        },
-        {
-          date: "Previous",
-          role: "Web Developer",
-          company: "Tribunal de Justicia Administrativa de Zacatecas",
-          desc: "Developed and maintained internal systems for the institution.",
-        },
-        {
-          date: "Social service",
-          role: "Developer - Sole owner",
-          company: "LAPSOL - UAZ",
-          desc: "Owned software development independently during social service at the university lab.",
-        },
-      ],
+    {
+      date: "Oct 2024 - Present",
+      role: "Frontend Developer",
+      company: "Gatzi - Startup",
+      desc: "Optimized Core Web Vitals with SSR using Next.js and React Router v7. Standardized API consumption with custom hooks built on TanStack Query. Implemented Atomic Design architecture, automated unit testing with Vitest, and collaborated in agile teams using Git.",
+    },
+    {
+      date: "Mar 2025 - May 2025",
+      role: "Frontend Developer",
+      company: "Tribunal de Justicia Administrativa de Zacatecas",
+      desc: "Built a case management system with interactive dashboards using Django, Bootstrap, and HTML5. Developed modules for user monitoring, keyword management, and automated report generation.",
+    },
+    {
+      date: "Aug 2024 - May 2025",
+      role: "Software Development Intern",
+      company: "LAPSOL - UAZ",
+     desc: "Solely responsible for the full-stack development of a cross-platform mobile app using React Native with a NestJS and MySQL backend, from requirements gathering through QA coordination and final delivery.",
+    },
+  ],
     },
     courses: {
       eyebrow: "courses and certifications",

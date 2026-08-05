@@ -1,4 +1,5 @@
 export interface Project {
+  id: number
   title: string;
   tag: "Full-stack" | "Frontend" | "Backend";
   desc: string;

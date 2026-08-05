@@ -22,8 +22,8 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const courses: Course[] = [
-  { name: "Meta Frontend Developer", org: "Coursera", year: "2024" },
-  { name: "The Complete Node.js Bootcamp", org: "Udemy", year: "2024" },
-  { name: "CS50 Intro to Computer Science", org: "Harvard / edX", year: "2023" },
-  { name: "Diseño UX/UI Avanzado", org: "Domestika", year: "2023" },
+  { name: "-", org: "-", year: "-" },
+  { name: "--", org: "Udemy", year: "-" },
+  { name: "---", org: "-", year: "-" },
+  { name: "----", org: "-", year: "-" },
 ];

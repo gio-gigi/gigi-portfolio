@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "git-sync-and-push",
+			"type": "shell",
+			"command": "git merge --abort; git pull --rebase origin main; git push origin main",
+			"isBackground": false
+		}
+	]
+}
